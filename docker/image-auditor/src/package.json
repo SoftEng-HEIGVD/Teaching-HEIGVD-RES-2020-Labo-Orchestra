@@ -8,5 +8,6 @@
   "author": "Matthieu Burguburu & Clarisse Fleurimont",
   "dependencies": {
     "moment": "^2.26.0"
+	"uuid": "^8.2.2"
   }
 }
