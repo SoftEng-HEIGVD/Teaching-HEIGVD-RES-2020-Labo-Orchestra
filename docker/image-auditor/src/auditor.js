@@ -10,12 +10,13 @@ var moment = require('moment');
 var udpSocket = dgram.createSocket('udp4');
 var tcpServer = net.createServer()
 
-// UDP Socket //
+var orchestra = new Map();
 
+// UDP Socket //
 // bind the datagram socket to listen
 udpSocket.bind(protocol.UDP_PORT, function() {
   console.log("Listening to the orchestra");
-  s.addMembership(protocol.UDP_ADDRESS);
+  udpSocket.addMembership(protocol.UDP_ADDRESS);
 });
 
 // on receiving a message on the socket
@@ -26,6 +27,7 @@ udpSocket.on('message', function(msg, source) {
 
 
 // TCP Server //
+tcpServer.listen(protocol.TCP_PORT);
 tcpServer.on('connection', function(socket) {
 	var json = [];
 	
@@ -33,9 +35,9 @@ tcpServer.on('connection', function(socket) {
 		uuid: "uuid",
 		instrument: "instrument",
 		activeSince: "activeSince"
-		);
+	});
 		
-	tcpServer.write(JSON.stringify(json));
+	socket.write(JSON.stringify(json));
 
-    tcpServer.end();
+    socket.end();
 });
