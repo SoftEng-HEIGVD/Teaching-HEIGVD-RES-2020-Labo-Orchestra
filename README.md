@@ -120,21 +120,21 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 | #  | Topic |
 | ---  | --- |
 |Question | In a JavaScript program, if we have an object, how can we **serialize it in JSON**? |
-| | *Enter your response here...*  |
+| | using `JSON.stringify(obj)`  |
 |Question | What is **npm**?  |
-| | *Enter your response here...*  |
+| | It's a package manager for node |
 |Question | What is the `npm install` command and what is the purpose of the `--save` flag?  |
-| | *Enter your response here...*  |
+| | It will install all the node dependecies in the `package.json`. A long time ago we must put the save flag to update the `package.json` but since `node 5.0` it is done by default |
 |Question | How can we use the `https://www.npmjs.com/` web site?  |
-| | *Enter your response here...*  |
+| | To search for node packages and their infos like documentation, dependecies, versions and usages for example |
 |Question | In JavaScript, how can we **generate a UUID** compliant with RFC4122? |
-| | *Enter your response here...*  |
+| | Via the  `uuid` package found in npm for example |
 |Question | In Node.js, how can we execute a function on a **periodic** basis? |
-| | *Enter your response here...*  |
+| | In javascript we use `setIntervall(callbackFunction, timeMs)`  |
 |Question | In Node.js, how can we **emit UDP datagrams**? |
-| | *Enter your response here...*  |
+| | via a UDP socket thanks to the `dgram` node API |
 |Question | In Node.js, how can we **access the command line arguments**? |
-| | *Enter your response here...*  |
+| | `process.argv` returns an array with all the arguments. Warning the two first arguments are `node` and `<fileLocation>`|
 
 
 ## Task 3: package the "musician" app in a Docker image
