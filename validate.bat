@@ -1,5 +1,3 @@
-#!/bin/bash
-
 #
 # This is a bit brutal (and will affect your system if you are running other
 # containers than those of the lab)
@@ -22,7 +20,7 @@ echo ""
 docker rmi res/auditor
 docker rmi res/musician
 docker rmi res/validate-music
-	
+
 #
 # ... and rebuild them
 #
@@ -43,8 +41,7 @@ echo ""
 echo ""
 echo "*** Starting validation..."
 echo ""
-git remote -v | tee check.log
-docker run --name res_validation -v /var/run/docker.sock:/var/run/docker.sock res/validate-music | tee -a check.log
-
-
+docker run --name validate-music -v //var/run/docker.sock:/var/run/docker.sock res/validate-music > check.log
+git add check.log
+pause
 
