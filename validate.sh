@@ -3,13 +3,14 @@
 #
 # This is a bit brutal (and will affect your system if you are running other
 # containers than those of the lab)
+# Aled /!\ /!\ /!\ /!\ /!\
 #
-echo ""
-echo ""
-echo "*** Killing all running containers"
-echo ""
-docker kill $(docker ps -a -q)
-docker rm $(docker ps -a -q)
+#echo ""
+#echo ""
+#echo "*** Killing all running containers"
+#echo ""
+#docker kill $(docker ps -a -q)
+#docker rm $(docker ps -a -q)
 
 #
 # Let's get rid of existing images...
