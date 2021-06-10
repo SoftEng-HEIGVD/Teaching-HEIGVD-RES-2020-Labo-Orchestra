@@ -142,17 +142,17 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 | #  | Topic |
 | ---  | --- |
 |Question | How do we **define and build our own Docker image**?|
-| | *Enter your response here...*  |
+| | We create a dockerfile then we built an image from it with `docker build  <image_name> .`  |
 |Question | How can we use the `ENTRYPOINT` statement in our Dockerfile?  |
-| | *Enter your response here...*  |
+| | We pass an array with commands `ENTRYPOINT ["node", "./src/index.js"]`  |
 |Question | After building our Docker image, how do we use it to **run containers**?  |
-| | *Enter your response here...*  |
+| | `docker run <image_name> `  |
 |Question | How do we get the list of all **running containers**?  |
-| | *Enter your response here...*  |
+| | `docker ps`  |
 |Question | How do we **stop/kill** one running container?  |
-| | *Enter your response here...*  |
+| | `docker kill <container_name>` |
 |Question | How can we check that our running containers are effectively sending UDP datagrams?  |
-| | *Enter your response here...*  |
+| | *Enter your response here...* //TODO |
 
 
 ## Task 4: implement an "auditor" Node.js application
