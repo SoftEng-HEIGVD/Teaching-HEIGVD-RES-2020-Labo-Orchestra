@@ -164,7 +164,7 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 |Question | How can we use the `Map` built-in object introduced in ECMAScript 6 to implement a **dictionary**?  |
 | | To differentiate all the instruments we use the instrument uuid as the key and the instrument itself as the value |
 |Question | How can we use the `Moment.js` npm module to help us with **date manipulations** and formatting?  |
-| | *Enter your response here...* |
+| | We not use Moment.js we use build-in Date object and it auto-json-stringify date into ISO 8601 format when we use `JSON.stringify()`   |
 |Question | When and how do we **get rid of inactive players**?  |
 | | Every second the auditor verify all instruments in its list and delete the ones where their `activeSince` value is more than 5 seconds distant from the current time |
 |Question | How do I implement a **simple TCP server** in Node.js?  |
