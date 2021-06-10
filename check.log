@@ -1,0 +1,41 @@
+Starting auditor container "ca3a49bedaf615fce629b504340fe28644bc8f852b31b7586cffe3266047363d"
+Starting auditor container "69e4e0c50834ddbd878814b6b456c42ee3c5c72c69800334f58a3759631bae35"
+Starting auditor container "af5f24628360467b4c448cafea09303157497aa7d7e66fef0658e052a35828b2"
+Starting auditor container "3786c6ebe976059515f8ccc5346002f83bc68f4f8b2936baf3284e446b31e357"
+Starting auditor container "d06dcb39b1dcc5bd249cdfeb6183e8bde5e367c5579a9a5ad812b0299c82d526"
+Starting auditor container "6814aa5ad954dc911cc95c92bab29e66df36a0c2593f033544019740bb4b4573"
+Starting auditor container "07b6a3f9b9d00fa82e79dd68d385780459c76439619fc6b6dc2a83504d44665e"
+Starting auditor container "a291c435050b42af51f3d9f4ecfd2ec6deb0a8a54baacbd8ba8124e9d7c25049"
+Starting auditor container "35563050b1dd341c9d6e845b30d55e3d2d70e4918ca46ba163329f2206b5a497"
+Starting auditor container "5adc559a285d9fcc4bd6ed847468622dc36d63fb9904b5274683089ee4e8ff10"
+Starting auditor container "644fda87721c7335b37db55fd47c8ad17326762708635873b7188bb935632b02"
+11 containers have been started.
+ca3a49bedaf615fce629b504340fe28644bc8f852b31b7586cffe3266047363d : ./src/index.js,trumpet
+af5f24628360467b4c448cafea09303157497aa7d7e66fef0658e052a35828b2 : ./src/index.js,violin
+a291c435050b42af51f3d9f4ecfd2ec6deb0a8a54baacbd8ba8124e9d7c25049 : ./src/index.js,trumpet
+69e4e0c50834ddbd878814b6b456c42ee3c5c72c69800334f58a3759631bae35 : ./src/index.js,violin
+5adc559a285d9fcc4bd6ed847468622dc36d63fb9904b5274683089ee4e8ff10 : ./src/index.js,violin
+d06dcb39b1dcc5bd249cdfeb6183e8bde5e367c5579a9a5ad812b0299c82d526 : ./src/index.js,violin
+6814aa5ad954dc911cc95c92bab29e66df36a0c2593f033544019740bb4b4573 : ./src/index.js,drum
+07b6a3f9b9d00fa82e79dd68d385780459c76439619fc6b6dc2a83504d44665e : ./src/index.js,flute
+3786c6ebe976059515f8ccc5346002f83bc68f4f8b2936baf3284e446b31e357 : ./src/index.js,flute
+644fda87721c7335b37db55fd47c8ad17326762708635873b7188bb935632b02 : ./src/index.js,violin
+35563050b1dd341c9d6e845b30d55e3d2d70e4918ca46ba163329f2206b5a497 : ./src/index.js
+Auditor validation: success: ["drum","flute","flute","trumpet","trumpet","violin","violin","violin","violin","violin"]
+There are 10 musicians, let's kill one
+killed 69e4e0c50834ddbd878814b6b456c42ee3c5c72c69800334f58a3759631bae35
+Auditor validation: success: ["drum","flute","flute","trumpet","trumpet","violin","violin","violin","violin"]
+Scheduling a new test
+There are 9 musicians, let's kill one
+killed 6814aa5ad954dc911cc95c92bab29e66df36a0c2593f033544019740bb4b4573
+Auditor validation: success: ["flute","flute","trumpet","trumpet","violin","violin","violin","violin"]
+Scheduling a new test
+There are 8 musicians, let's kill one
+killed a291c435050b42af51f3d9f4ecfd2ec6deb0a8a54baacbd8ba8124e9d7c25049
+Auditor validation: success: ["flute","flute","trumpet","violin","violin","violin","violin"]
+Scheduling a new test
+There are 7 musicians, let's kill one
+killed 644fda87721c7335b37db55fd47c8ad17326762708635873b7188bb935632b02
+Auditor validation: success: ["flute","flute","trumpet","violin","violin","violin"]
+Scheduling a new test
+We have done all tests.
