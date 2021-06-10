@@ -144,7 +144,7 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 |Question | How do we **define and build our own Docker image**?|
 | | We create a dockerfile then we built an image from it with `docker build  <image_name> .`  |
 |Question | How can we use the `ENTRYPOINT` statement in our Dockerfile?  |
-| | *Enter your response here...*  |
+| | We pass an array with commands `ENTRYPOINT ["node", "./src/index.js"]`  |
 |Question | After building our Docker image, how do we use it to **run containers**?  |
 | | `docker run <image_name> `  |
 |Question | How do we get the list of all **running containers**?  |
