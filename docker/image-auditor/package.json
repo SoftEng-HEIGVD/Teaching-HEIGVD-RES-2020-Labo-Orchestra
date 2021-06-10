@@ -1,0 +1,11 @@
+{
+  "name": "image-auditor",
+  "version": "1.0.0",
+  "description": "Auditor programm",
+  "main": "index.js",
+  "scripts": {
+    "run": "node ./src/index.js"
+  },
+  "author": "Paul Reeve & Maxime Scharwath",
+  "license": "ISC"
+}
