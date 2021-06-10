@@ -1,7 +1,7 @@
 const dgram = require('dgram');
 const socket = dgram.createSocket('udp4');
 const protocol = require('./MusicianProtocol');
-const {uuid} = require('uuidv4');
+const {v4} = require('uuid');
 
 /* Object to map sounds and instruments */
 const instruSounds = {
@@ -14,18 +14,21 @@ const instruSounds = {
 
 function Musician(instrument) {
 
+    this.uuid = v4();
+    this.instrument = instrument;
+    this.sound = instruSounds[instrument];
+
     Musician.prototype.update = function () {
 
         /* Create data to send */
         const data = {
-            uuid: uuid(),
-            instrument: instrument,
-            sound: instruSounds[instrument],
+            uuid: this.uuid,
+            sound: this.sound,
         };
         const payload = JSON.stringify(data);
 
         /* Send the datagram */
-        const message = new Buffer(payload);
+        const message = new Buffer.from(payload);
         socket.send(message, 0, message.length, protocol.PROTOCOL_PORT, protocol.PROTOCOL_MULTICAST_ADDRESS,
             function (err, bytes) {
                 console.log("Sending payload: " + payload + " via port " + socket.address().port);
