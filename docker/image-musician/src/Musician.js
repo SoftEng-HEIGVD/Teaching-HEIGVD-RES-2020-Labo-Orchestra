@@ -1,30 +1,32 @@
 const dgram = require('dgram');
 const socket = dgram.createSocket('udp4');
+const protocol = require('./MusicianProtocol');
+const {uuid} = require('uuidv4');
+
+/* Object to map sounds and instruments */
+const instruSounds = {
+    piano : "ti-ta-ti",
+    trumpet : "pouet",
+    flute : "trulu",
+    violin : "gzi-gzi",
+    drum : "boum-boum"
+}
 
 function Musician(instrument) {
 
-    const uuid = 1;
-    this.instrument = instrument;
-
     Musician.prototype.update = function () {
 
-        let sound;
-        if ("instrument" === "piano") {
-            sound = "piu piu"
-        } else {
-            sound = "miaow"
-        }
-
-        let data = {
-            uuid: this.uuid,
-            instrument: this.instrument,
-            activeSince: Date.now(),
+        /* Create data to send */
+        const data = {
+            uuid: uuid(),
+            instrument: instrument,
+            sound: instruSounds[instrument],
         };
         const payload = JSON.stringify(data);
 
         /* Send the datagram */
-        let message = new Buffer(payload);
-        socket.send(message, 0, message.length, 9907, "239.255.22.5",
+        const message = new Buffer(payload);
+        socket.send(message, 0, message.length, protocol.PROTOCOL_PORT, protocol.PROTOCOL_MULTICAST_ADDRESS,
             function (err, bytes) {
                 console.log("Sending payload: " + payload + " via port " + socket.address().port);
             }
@@ -38,9 +40,9 @@ function Musician(instrument) {
 /*
  * Get the instrument as a param
  */
-let instrument = process.argv[2];
+const instrument = process.argv[2];
 
 /*
  * Init a new Musician
  */
-const musician = new Musician(instrument);
+const m = new Musician(instrument);
