@@ -18,6 +18,7 @@ if (!instrument) throw new Error(`No instrument '${instrumentWanted}' found.`);
 
 
 const socket = dgram.createSocket('udp4');
+const activeSince = new Date();
 setInterval(() => {
     const payload = JSON.stringify({
         uuid,
