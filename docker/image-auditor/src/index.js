@@ -1,6 +1,6 @@
 const net = require('net');
 const dgram = require('dgram');
-const {UDP_PORT, UDP_ADDRESS, TCP_PORT} = require("./config");
+const {UDP_PORT, UDP_ADDRESS, TCP_PORT, INSTRUMENT_TIMEOUT} = require("./config");
 const {LOG} = require("./logger");
 const s = dgram.createSocket('udp4');
 const instruments = new Map();
@@ -39,7 +39,7 @@ s.on('message', (msg, source) => {
 //Check timeout
 setInterval(() => {
     instruments.forEach((i, key) => {
-        if ((Date.now() - i.lastEared.getTime()) > 5000) {
+        if ((Date.now() - i.lastEared.getTime()) > INSTRUMENT_TIMEOUT) {
             LOG.WARN(`A ${i.data.instrument}[${i.data.uuid}] is silent for too long !`); //for yellow color :)
             instruments.delete(key);
         }
